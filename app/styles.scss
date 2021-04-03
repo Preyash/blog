@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Chonburi&family=Gravitas+One&family=Yeseva+One&display=swap');
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+@font-face {
+  font-family: "Futura";
+  src: url("./fonts/FuturaPTBook.otf") format("opentype");
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3b4a74;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  font-family: 'Futura';
+  font-size: 16px;
+  line-height: 1.6em;
+  font-weight: 400;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+.m0-auto {
+  margin: 0auto;
+}
+
+.fullFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cup {
+  cursor: pointer;
+}
+
+.df {
+  display: flex;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.fullWidth {
+  width: 100%;
+  height: auto;
+}
+
+.tac {
+  text-align: center;
+}
+
+.whiteText {
+  color: white;
+}
+
+.h80{
+  height: 80px;
+}
