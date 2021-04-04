@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { useAtom } from 'jotai'
+import { initialState, usersData, editMode } from "store";
+
+const clg = (...str) => console.log(...str)
 
 const App = (props) => {
-  const { editing, addUser, user, setUser, updateUser } = props
-  const initialFormState = { id: null, name: '', username: '' }
+  const [users, setUsers] = useAtom(usersData)
+  const [user, setUser] = useAtom(initialState)
+  const [editing, setEditing] = useAtom(editMode)
 
-  useEffect(() => {
-    editing && setUser(user)
-  }, [props])
+  useEffect(()=>{
+    localStorage.setItem('localUsers', JSON.stringify(users))
+  }, [user])
 
   const inputChange = (event) => {
     const { name, value } = event.target
@@ -17,11 +22,13 @@ const App = (props) => {
     event.preventDefault()
     if (!user.name || !user.username) return
     if (editing) {
-      updateUser(user.id, user)
+      setEditing(false)
+      setUsers(users.map((i) => (i.id === user.id ? user : i)))
     } else {
-      addUser(user)
+      user.id = new Date().valueOf()
+      setUsers([...users, user])
     }
-    setUser(initialFormState)
+    setUser(initialState.init)
   }
 
   const { name, username } = user

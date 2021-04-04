@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
 import './styles.scss';
-
+import { Provider } from 'jotai'
 // Import root app
 import App from 'containers/App';
 
@@ -19,9 +19,11 @@ import { translationMessages } from './i18n';
 const MOUNT_NODE = document.getElementById('app');
 
 const MainApp = () => (
+  <Provider>
   <Router>
     <App />
   </Router>
+  </Provider>
 )
 
 const render = messages => {
