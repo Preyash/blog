@@ -2,7 +2,6 @@ import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
-import 'sanitize.css/sanitize.css';
 import './styles.scss';
 
 // Import root app
@@ -27,7 +26,7 @@ const MainApp = () => (
 
 const render = messages => {
   ReactDOM.render(
-    <MainApp/>,
+    <MainApp />,
     MOUNT_NODE,
   );
 };
