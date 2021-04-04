@@ -23,7 +23,7 @@ const App = (props) => {
     if (!user.name || !user.username) return
     if (editing) {
       setEditing(false)
-      setUsers(users.map((i) => (i.id === user.id ? user : i)))
+      setUsers(users.map(i => i.id === user.id ? user : i))
     } else {
       user.id = new Date().valueOf()
       setUsers([...users, user])

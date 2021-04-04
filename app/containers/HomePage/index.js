@@ -5,7 +5,7 @@ import Form from 'components/Form'
 export default function HomePage() {
   return (
     <div className="container">
-      <h1>CRUD App with Hooks</h1>
+      <h1>CRUD with Hooks, jotai & localStorage</h1>
       <div className="flex-row">
         <div className="flex-large">
           <h2>User config</h2>
